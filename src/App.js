@@ -26,6 +26,7 @@ function App() {
           <Route path='/like' element={<LikePage/>}/>
           <Route path='*' element={<NotFound/>}/>
           <Route path='/products/:productId' element={<ProductDetail/>}/>
+          <Route path='/search/products/:productId' element={<ProductDetail/>}/>
         </Route>
       </Routes>
     </AppProvider >

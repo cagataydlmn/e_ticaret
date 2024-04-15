@@ -152,22 +152,26 @@ body {
         justify-content: end;
         flex-direction: column;
         gap: 20px;
+
         .active {
             color: red;
         }
+
         :hover {
             cursor: pointer;
         }
+
         .basket-shopping:hover {
             transition: 0.9s;
             color: whitesmoke;
         }
+
         button {
             background: transparent;
             border: none;
-            font-size: 20px; 
+            font-size: 20px;
         }
-       
+
         a {
             display: flex;
             justify-content: end;
@@ -236,7 +240,7 @@ body {
         }
     }
 
-     img {
+    img {
         width: 150px;
     }
 }
@@ -248,7 +252,7 @@ body {
     margin: 50px;
     gap: 20px;
 
-     .input {
+    .input {
         margin-left: auto;
         margin-right: auto;
         width: 50%;
@@ -256,6 +260,70 @@ body {
         border-radius: 15px;
         font-size: 15px;
     }
+
+    .inputs {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    li {
+        list-style: none;
+        width: 30%;
+
+        .products {
+            border-radius: 10px;
+            border: 1px solid black;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            &-title {
+                font-family: monospace;
+                font-weight: 700;
+                font-style: inherit;
+                font-size: 17px;
+                display: -webkit-box;
+                overflow: hidden;
+                -webkit-line-clamp: 1;
+                -webkit-box-orient: vertical;
+                align-items: center;
+                margin-top: 10px;
+                margin-left: 10px;
+            }
+
+            &-description {
+                font-size: 15px;
+                display: -webkit-box;
+                overflow: hidden;
+                color: #989898;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+            }
+
+            &-price {
+                font-size: 25px;
+                color: #000000;
+                position: relative;
+            }
+
+            &-image {
+                border-radius: 10px;
+                margin: 0px;
+                width: 100%;
+                margin-left: auto;
+                margin-right: auto;
+
+                img {
+                    width: 100%;
+
+                }
+
+            }
+        }
+    }
+
 
 }
 
@@ -287,4 +355,21 @@ body {
         }
     }
 
+}
+
+.product-detail {
+    display: flex;
+    gap: 30px;
+    margin-right: 20px;
+
+    img {
+        width: 100%;
+        border-radius: 7px;
+    }
+
+    &-right {
+        border: 1px solid gray;
+        border-radius: 7px;
+        padding: 10px;
+    }
 }

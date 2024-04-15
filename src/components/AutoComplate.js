@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { useSite } from "../context/AppContext";
+import { Link } from "react-router-dom";
 
-export default function AutoComplate() {
+export default function AutoComplate({ productItem}) {
     const { productItems } = useSite();
     const [searchProduct, setSearchProduct] = useState([]);
     const [search, setSearch] = useState("");
@@ -23,12 +24,12 @@ export default function AutoComplate() {
                 {searchProduct.map((item, itemindex) => (
                     <li key={itemindex}>
                         <div className="products">
-                            <div className="products-id">{item.id}</div>
                             <div className="products-title">
                                 {item.title}
                             </div>
                             <div className="products-image">
-                                <img src={item.images} />
+                            <Link to={`products/${item.id}`}><img src={item.images} /></Link>
+
                             </div>
                             <div className="products-description">
                                 {item.description}
