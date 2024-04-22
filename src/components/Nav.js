@@ -4,6 +4,13 @@ import { BsBasket } from "react-icons/bs";
 import { BiSearchAlt } from "react-icons/bi";
 
 export default function Nav() {
+
+    const logout = () => {
+        document.cookie = 'is_logged_in=false'
+        document.location.href = '/'
+    }
+
+
     return (
         <>
             <nav className="nav mx-auto w-75">
@@ -45,6 +52,11 @@ export default function Nav() {
                     <NavLink to='/basket' className="nav-link">Sepet</NavLink>
                     <NavLink to='/categories' className="nav-link">Kategoriler</NavLink>
                     <NavLink to='/contact' className="nav-link">İletişim</NavLink>
+                    <NavLink to='/login' className="nav-link">Üye ol</NavLink>
+                    {window.getCookie('is_logged_in') == 'false' ? (
+                        <NavLink to='/giris' className="nav-link">Giriş Yap</NavLink>
+                    ) : <button onClick={logout}>Çıkış Yap</button>}
+
                 </div>
 
             </nav>

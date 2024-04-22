@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom"
 import { useSite } from "../context/AppContext"
 import NotFound from "../pages/NotFound"
 
-export default function ProductDetail({productItem}) {
+export default function ProductDetail({ productItem }) {
     const { setSelectProductItems, selectProductItems, setTotalPrice } = useSite()
 
     const { productItems } = useSite()
@@ -19,8 +19,7 @@ export default function ProductDetail({productItem}) {
                         : product2
                 )
             )
-            // findProduct.quantity += 1;
-            // findProduct.toplamFiyat = findProduct.price * findProduct.quantity;
+
         } else {
             let quantity = 1;
             const productObj = { ...product, quantity }
@@ -28,7 +27,7 @@ export default function ProductDetail({productItem}) {
         }
         setTotalPrice(prevPrice => prevPrice += Number(product.price))
     }
-    
+
     return (
         <>
             <div className="product-detail">
@@ -39,11 +38,29 @@ export default function ProductDetail({productItem}) {
                     <h1>{thisProduct.title}</h1>
                     <p>Price: ${thisProduct.price}</p>
                     <p>{thisProduct.description}</p>
-                    <button onClick={() => {addProduct(thisProduct)}} >sepete ekle</button>
+                    <button class="animated-button" onClick={() => { addProduct(thisProduct) }}>
+                        <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
+                            ></path>
+                        </svg>
+                        {window.getCookie('is_logged_in') == 'false' || window.getCookie('is_logged_in') == undefined ? (
+                            <a href="http://localhost:3000/giris">
+                                <span class="text">  Sepete Ekle !</span>
+                            </a>
+                        ) : (
+                            <span class="text">  Sepete Ekle !</span>
+                        )}
+                        <span class="circle"></span>
+                        <svg viewBox="0 0 24 24" class="arr-1" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
+                            ></path>
+                        </svg>
+                    </button>
                 </div>
                 <div>
                 </div>
-
             </div>
         </>
     )

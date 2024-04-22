@@ -17,10 +17,11 @@ export function Home() {
 
     //     }
     // }, [popupVisible])
-    
-    return (<>        
-            <HomeProduct/>
-            </>
+
+    return (
+    <>
+        <HomeProduct />
+    </>
 
     )
 }

@@ -1,6 +1,6 @@
 export function Contact(){
     return(
-        <div>
+        <div className="contact">
             İletişim sayfası
         </div>
     )

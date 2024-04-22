@@ -10,9 +10,15 @@ import Search from './pages/Search';
 import LikePage from './pages/LikePage';
 import ProductDetail from './components/ProductDetail';
 import NotFound from './pages/NotFound';
+import Login from './pages/Login';
+import GirisYap from './pages/GirisYap';
 
 
 function App() {
+  window.getCookie = function(name) {
+    var match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+    if (match) return match[2];
+  }
 
   return (
     <AppProvider>
@@ -27,6 +33,8 @@ function App() {
           <Route path='*' element={<NotFound/>}/>
           <Route path='/products/:productId' element={<ProductDetail/>}/>
           <Route path='/search/products/:productId' element={<ProductDetail/>}/>
+          <Route path='/login' element={<Login/>}/>
+          <Route path='/giris' element={<GirisYap/>}/>
         </Route>
       </Routes>
     </AppProvider >

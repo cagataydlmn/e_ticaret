@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import { useSite } from "../context/AppContext";
 
 export default function Like() {
@@ -7,6 +8,14 @@ export default function Like() {
         const updatedLikeItems = likeItems.filter(item => item.id !== product);
         setLikeItems(updatedLikeItems);
     };
+    if (window.getCookie('is_logged_in') == 'false') {
+        return <div>
+            Favorilere ürün ekleyebilmek için önce giriş yap
+            <NavLink to='/Giris'>
+                Giriş yapmak için tıkla
+            </NavLink>
+        </div>
+    }
     return (
 
         <div className="basket">
