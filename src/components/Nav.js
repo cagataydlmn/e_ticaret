@@ -3,6 +3,8 @@ import { FcLike } from "react-icons/fc";
 import { BsBasket } from "react-icons/bs";
 import { BiSearchAlt } from "react-icons/bi";
 
+
+
 export default function Nav() {
 
     const logout = () => {
