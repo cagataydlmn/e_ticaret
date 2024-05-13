@@ -28,7 +28,7 @@ export default function AutoComplate({ productItem}) {
                                 {item.title}
                             </div>
                             <div className="products-image">
-                            <Link to={`products/${item.id}`}><img src={item.images} /></Link>
+                            <Link to={`products/${item.id}`}><img src={item.images[0].replace('[', '').replace(']', '').replaceAll('"', '')} /></Link>
 
                             </div>
                             <div className="products-description">

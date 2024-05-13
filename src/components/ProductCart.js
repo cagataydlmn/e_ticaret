@@ -2,7 +2,7 @@ import { useSite } from "../context/AppContext";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBasketShopping, faHeart } from '@fortawesome/free-solid-svg-icons';
 import { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 export default function ProductCart({ productItem, productItemIndex, findProduct, selectProductItem }) {
@@ -43,7 +43,7 @@ export default function ProductCart({ productItem, productItemIndex, findProduct
     }
 
     return (
-        <li key={productItemIndex}>
+        <li className="products_li" key={productItemIndex}>
             <div className="products">
                 <div className="products-title">
                     {productItem.title}
@@ -61,9 +61,9 @@ export default function ProductCart({ productItem, productItemIndex, findProduct
 
                         {window.getCookie('is_logged_in') == 'false' ? (
                             <div className="products-add-basket-button">
-                                <a href="http://localhost:3000/giris" className="basket-shopping" >
+                                <Link  to="/giris" className="basket-shopping" >
                                     <FontAwesomeIcon icon={faBasketShopping} />
-                                </a>
+                                </Link>
                             </div>
                         ) : <button className="basket-shopping" onClick={() => handleSizeOpen(true)} >
                             <FontAwesomeIcon icon={faBasketShopping} />
@@ -71,9 +71,9 @@ export default function ProductCart({ productItem, productItemIndex, findProduct
 
                         {window.getCookie('is_logged_in') == 'false' ? (
                             <div className="products-add-like-button">
-                                <a href="http://localhost:3000/giris">
+                                <Link to="/giris">
                                     <FontAwesomeIcon icon={faHeart} />
-                                </a>
+                                </Link>
                             </div>) : <div className="products-add-like-button">
                             <button className={findProduct === true ? "active" : ""} onClick={() => likeUnLike(productItem)}>
                                 <FontAwesomeIcon icon={faHeart} />

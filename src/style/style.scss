@@ -2,12 +2,15 @@ $navcolor: rgba(255, 135, 135, 0.862);
 $li-color: rgb(255, 143, 143);
 
 body {
-    padding: 10px;
+    background-color: #f0f0f0;
 }
 
 .nav {
     display: flex;
     justify-content: space-between;
+    padding-left: 50px;
+    padding-right: 50px;
+    background-color: #fff;
 
     &-router {
         display: flex;
@@ -23,13 +26,17 @@ body {
         color: black;
         padding: 10px;
         border-radius: 10px;
-        width: 7spx;
         height: 20px;
         border: 1px solid gray;
 
-        :hover {
-            border: 2px solid black;
+        &-quit {
+            border: none;
+            background-color: white;
         }
+
+       &-quit:hover{
+            cursor: pointer;
+       }
     }
 
 
@@ -83,6 +90,7 @@ body {
             list-style: none;
             display: flex;
             width: 15%;
+            background-color:#fff ;
 
             .products {
                 border-radius: 10px;
@@ -132,6 +140,7 @@ body {
 
                     img {
                         width: 100%;
+                        height: 250px;
 
                     }
 
@@ -163,7 +172,7 @@ body {
 
         .basket-shopping:hover {
             transition: 0.9s;
-            color: whitesmoke;
+            color: rgb(223, 30, 30);
         }
 
         button {
@@ -270,58 +279,61 @@ body {
     li {
         list-style: none;
         width: 30%;
-
-        .products {
-            border-radius: 10px;
-            border: 1px solid black;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-
-            &-title {
-                font-family: monospace;
-                font-weight: 700;
-                font-style: inherit;
-                font-size: 17px;
-                display: -webkit-box;
-                overflow: hidden;
-                -webkit-line-clamp: 1;
-                -webkit-box-orient: vertical;
-                align-items: center;
-                margin-top: 10px;
-                margin-left: 10px;
-            }
-
-            &-description {
-                font-size: 15px;
-                display: -webkit-box;
-                overflow: hidden;
-                color: #989898;
-                -webkit-line-clamp: 3;
-                -webkit-box-orient: vertical;
-            }
-
-            &-price {
-                font-size: 25px;
-                color: #000000;
-                position: relative;
-            }
-
-            &-image {
+        .products_general{
+            .products {
                 border-radius: 10px;
-                margin: 0px;
+                border: 1px solid black;
                 width: 100%;
-                margin-left: auto;
-                margin-right: auto;
-
-                img {
-                    width: 100%;
-
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+    
+                &-title {
+                    font-family: monospace;
+                    font-weight: 700;
+                    font-style: inherit;
+                    font-size: 17px;
+                    display: -webkit-box;
+                    overflow: hidden;
+                    -webkit-line-clamp: 1;
+                    -webkit-box-orient: vertical;
+                    align-items: center;
+                    margin-top: 10px;
+                    margin-left: 10px;
                 }
-
+    
+                &-description {
+                    font-size: 15px;
+                    display: -webkit-box;
+                    overflow: hidden;
+                    color: #989898;
+                    -webkit-line-clamp: 3;
+                    -webkit-box-orient: vertical;
+                }
+    
+                &-price {
+                    font-size: 25px;
+                    color: #000000;
+                    position: relative;
+                }
+    
+                &-image {
+                    border-radius: 10px;
+                    margin: 0px;
+                    width: 100%;
+                    margin-left: auto;
+                    margin-right: auto;
+    
+                    img {
+                        width: 100%;
+    
+                    }
+    
+                }
             }
         }
+
+       
     }
 
 
@@ -332,13 +344,25 @@ body {
     flex-direction: column;
     justify-content: space-between;
     gap: 50px;
+    a{
+        text-decoration: none;
+    }
+  
 
     li {
         list-style: none;
+        :hover{
+            height: 40px;
+        }
 
         .categories-general {
+            background: gray;
+            border-radius: 10px;
             display: flex;
-            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            text-decoration: none;
+            color: white;
 
             .categories-image {
                 width: 10%;
@@ -351,7 +375,12 @@ body {
 
             .categories-title {
                 font-size: 30px;
+                a{
+                    text-decoration: none;
+    color: whitesmoke;
+                }
             }
+            
         }
     }
 
@@ -460,4 +489,73 @@ body {
     width: 220px;
     height: 220px;
     opacity: 1;
+}
+
+.deneme {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+    border-radius: 10px;
+    height: 20px;
+    border: 1px solid gray;
+
+}
+
+
+
+
+.login_general{
+    display: flex;
+    justify-content: center;
+    margin-top: 10%;
+    .login{
+        border-radius: 5%;
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+        height: 300px;
+        background-color: white;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        &_name{
+            gap: 10px;
+            size: 20px;
+            width: 75%;
+            display: flex;
+            flex-direction: column;
+            font-size: 20px;
+            font-weight: 500;
+            input{
+                height: 25px;
+            }
+         
+        }
+        &_password{
+            gap: 10px;
+            size: 20px;
+            font-size: 20px;
+            font-weight: 500;
+            width: 75%;
+            display: flex;
+            flex-direction: column;
+            input{
+                height: 25px;
+            }
+        }
+        button{
+            margin-top: 40px;
+            width: 200px;
+            height: 50px;
+            background-color: rgb(108, 107, 106);
+            color: white;
+            font-size: 20px;
+            border: none;
+            border-radius: 10px;
+           cursor: pointer;
+        }
+    }
 }

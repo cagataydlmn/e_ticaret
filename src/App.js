@@ -5,16 +5,17 @@ import { Basket } from './pages/Basket';
 import { Home } from './pages/Home';
 import { Contact } from './pages/Contact';
 import './style/style.scss';
-import AppProvider from './context/AppContext';
+import  AppProvider  from './context/AppContext';
 import Search from './pages/Search';
 import LikePage from './pages/LikePage';
 import ProductDetail from './components/ProductDetail';
 import NotFound from './pages/NotFound';
 import Login from './pages/Login';
 import GirisYap from './pages/GirisYap';
-
+import CategoryDetail from './components/CategoryDetail';
 
 function App() {
+  
   window.getCookie = function(name) {
     var match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
     if (match) return match[2];
@@ -35,6 +36,7 @@ function App() {
           <Route path='/search/products/:productId' element={<ProductDetail/>}/>
           <Route path='/login' element={<Login/>}/>
           <Route path='/giris' element={<GirisYap/>}/>
+          <Route path='/:category' element={<CategoryDetail/>}/>
         </Route>
       </Routes>
     </AppProvider >

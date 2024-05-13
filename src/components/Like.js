@@ -25,7 +25,7 @@ export default function Like() {
                         <div className="basket-items">
                             <div className="basket-items-general">
                                 <div className="basket-items-images">
-                                    <img src={selectProductItem.images} />
+                                    <img src={selectProductItem.images[0].replace('[', '').replace(']', '').replaceAll('"', '')} />
                                 </div>
                                 <div className="basket-items-info">
                                     <div className="basket-items-text">

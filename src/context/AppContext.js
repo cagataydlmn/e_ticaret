@@ -28,26 +28,24 @@ const Provider = ({ children }) => {
     useEffect(() => {
         if (likeItems.length > 0) {
             localStorage.setItem('likeItems', JSON.stringify(likeItems))
-
         }
     }, [likeItems])
 
     useEffect(() => {
-        fetch('https://api.escuelajs.co/api/v1/products')
+        fetch('https://dummyjson.com/products')
             .then(response => response.json())
             .then(data => {
-                data.forEach(element => {
+                data.products.forEach(element => {
                     element.quantity = 1
                     element.toplamFiyat = element.price * element.quantity
                 });
-                setProductItems(data);
+                setProductItems(data.products);
             })
         const savedProduct = JSON.parse(localStorage.getItem('selectProductItems'));
         const totalPriceStorage = Number(localStorage.getItem('totalPrice'));
         const liked = JSON.parse(localStorage.getItem('likeItems'));
-        console.log(liked);
 
-        if (liked.length > 0) {
+        if (liked?.length > 0) {
             setLikeItems(liked)
         }
         if (savedProduct) {
