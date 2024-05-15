@@ -99,7 +99,6 @@ body {
                 display: flex;
                 flex-direction: column;
                 gap: 10px;
-
                 &-title {
                     font-family: monospace;
                     font-weight: 700;
@@ -344,16 +343,17 @@ body {
     flex-direction: column;
     justify-content: space-between;
     gap: 50px;
-    a{
+    .link-item {
+        text-decoration: none;
+        display: block;
+        height: 40px;
+    }
+    .categories-link{
         text-decoration: none;
     }
-  
 
     li {
         list-style: none;
-        :hover{
-            height: 40px;
-        }
 
         .categories-general {
             background: gray;
@@ -375,10 +375,11 @@ body {
 
             .categories-title {
                 font-size: 30px;
-                a{
-                    text-decoration: none;
-    color: whitesmoke;
-                }
+            }
+            .categories-name{
+                text-decoration: none;
+                color: whitesmoke;
+
             }
             
         }
@@ -557,5 +558,91 @@ body {
             border-radius: 10px;
            cursor: pointer;
         }
+    }
+}
+.brands{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin: 10px;
+    span{
+        border: 1px solid black;
+        padding: 10px;
+        border-radius: 10px;
+        width: 10% ;
+        display: flex;
+        justify-content: center;
+        &:hover{
+            cursor: pointer;
+        }
+    }
+}
+.category-list-general{
+    list-style: none;
+    display: flex;
+    .categories-product{
+        display: flex;
+    }
+}
+
+.products_li{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 40px;
+    li{
+        list-style: none;
+        display: flex;
+        width: 15%;
+        background-color:#fff ;
+    }
+    &-title {
+        font-family: monospace;
+        font-weight: 700;
+        font-style: inherit;
+        font-size: 17px;
+        display: -webkit-box;
+        overflow: hidden;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        align-items: center;
+        margin-top: 10px;
+        margin-left: 10px;
+    }
+
+    &-description {
+        font-size: 15px;
+        display: -webkit-box;
+        overflow: hidden;
+        color: #989898;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        position: relative;
+        top: -50px;
+    }
+
+    &-price {
+        font-size: 25px;
+        color: #000000;
+        position: relative;
+    }
+
+    &-images {
+        border-radius: 10px;
+        margin: 0px;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+
+        img {
+            width: 100%;
+            height: 250px;
+
+        }
+
     }
 }

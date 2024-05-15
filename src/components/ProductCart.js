@@ -5,7 +5,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-export default function ProductCart({ productItem, productItemIndex, findProduct, selectProductItem }) {
+export default function ProductCart({ productItem, productItemIndex, findProduct = undefined, selectProductItem }) {
     const { setSelectProductItems, selectProductItems, setTotalPrice, likeItems, setLikeItems } = useSite()
     const [sizeOpen, setSizeOpen] = useState(false)
     const showToastMessage = () => {
@@ -39,7 +39,6 @@ export default function ProductCart({ productItem, productItemIndex, findProduct
         else {
             setLikeItems([...likeItems, product])
         }
-        console.log(likeItems);
     }
 
     return (
@@ -75,7 +74,7 @@ export default function ProductCart({ productItem, productItemIndex, findProduct
                                     <FontAwesomeIcon icon={faHeart} />
                                 </Link>
                             </div>) : <div className="products-add-like-button">
-                            <button className={findProduct === true ? "active" : ""} onClick={() => likeUnLike(productItem)}>
+                            <button className={findProduct ? "active" : ""} onClick={() => likeUnLike(productItem)}>
                                 <FontAwesomeIcon icon={faHeart} />
                             </button>
                         </div>}

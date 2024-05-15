@@ -59,7 +59,6 @@ export default function Nav() {
                         <NavLink to='/giris' className="nav-link">Giriş Yap</NavLink>
                     ) : <NavLink className="nav-link" to='/'><button onClick={logout} className="nav-link-quit">Çıkış Yap</button></NavLink>}
                 </div>
-
             </nav>
             <Outlet />
         </>

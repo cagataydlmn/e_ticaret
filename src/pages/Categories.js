@@ -1,10 +1,8 @@
-import CategoryDetail from "../components/CategoryDetail";
+import { CategoryList } from "../components/CategoryList";
 
 export function Categories() {
 
   return (
-     <>
-      <CategoryDetail/>
-     </>
+      <CategoryList/>
   )
 }

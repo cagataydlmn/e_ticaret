@@ -8,7 +8,6 @@ export default function ProductDetail({ productItem }) {
     const { productId } = useParams()
 
     const thisProduct = productItems.find((product) => product.id === Number(productId));
-    console.log(thisProduct);
     const addProduct = (product) => {
         const findProduct = selectProductItems.find(item => item.id === product.id);
         if (findProduct) {

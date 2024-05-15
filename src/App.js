@@ -1,5 +1,4 @@
 import { Route, Routes, Link, NavLink } from 'react-router-dom'
-import { Categories } from './pages/Categories';
 import Nav from './components/Nav';
 import { Basket } from './pages/Basket';
 import { Home } from './pages/Home';
@@ -12,7 +11,8 @@ import ProductDetail from './components/ProductDetail';
 import NotFound from './pages/NotFound';
 import Login from './pages/Login';
 import GirisYap from './pages/GirisYap';
-import CategoryDetail from './components/CategoryDetail';
+import { Categories } from './pages/Categories';
+import { CategoryDetail } from './pages/CategoryDetail';
 
 function App() {
   
@@ -27,6 +27,7 @@ function App() {
         <Route path='/' element={<Nav />}>
           <Route path='/' element={<Home />}/>
           <Route path='/categories' element={<Categories />} />
+          <Route path='/categories/:category' element={<CategoryDetail />} />
           <Route path='/basket' element={<Basket/> }/>
           <Route path='contact' element={<Contact/>}/>
           <Route path='/Search' element={<Search/>}/>
@@ -34,9 +35,10 @@ function App() {
           <Route path='*' element={<NotFound/>}/>
           <Route path='/products/:productId' element={<ProductDetail/>}/>
           <Route path='/search/products/:productId' element={<ProductDetail/>}/>
+          <Route path='/categories/products/:productId' element={<ProductDetail/>}/>
+          <Route path='/categories/:brand/products/:productId' element={<ProductDetail/>}/>
           <Route path='/login' element={<Login/>}/>
           <Route path='/giris' element={<GirisYap/>}/>
-          <Route path='/:category' element={<CategoryDetail/>}/>
         </Route>
       </Routes>
     </AppProvider >

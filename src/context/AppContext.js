@@ -1,4 +1,5 @@
 import { createContext, useContext, useState, useEffect } from "react";
+import { useFetch } from "../hooks/useFetch";
 
 export const AppContext = createContext()
 const Provider = ({ children }) => {
@@ -31,16 +32,21 @@ const Provider = ({ children }) => {
         }
     }, [likeItems])
 
+    const { data: productData } = useFetch('https://dummyjson.com/products')
+
     useEffect(() => {
-        fetch('https://dummyjson.com/products')
-            .then(response => response.json())
-            .then(data => {
-                data.products.forEach(element => {
-                    element.quantity = 1
-                    element.toplamFiyat = element.price * element.quantity
-                });
-                setProductItems(data.products);
-            })
+        if (productData) {
+            productData.products.forEach(element => {
+                element.quantity = 1
+                element.toplamFiyat = element.price * element.quantity
+            });
+            setProductItems(productData.products)
+        }
+    }, [productData])
+
+
+    useEffect(() => {
+        
         const savedProduct = JSON.parse(localStorage.getItem('selectProductItems'));
         const totalPriceStorage = Number(localStorage.getItem('totalPrice'));
         const liked = JSON.parse(localStorage.getItem('likeItems'));
