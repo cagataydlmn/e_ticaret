@@ -2,15 +2,25 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useFetch } from "../hooks/useFetch";
 import ProductCart from "./ProductCart";
+import Loading from "./Loading";
+import HomeProduct from "./HomeProduct";
+import { ToastContainer } from "react-toastify";
 
 export function CategoryList() {
     const [products, setProducts] = useState([]);
-
+    const [loading,setLoading]=useState(false);
+    
     const { data } = useFetch('https://dummyjson.com/products')
 
     useEffect(() => {
+        setLoading(true)
+
         if (data) {
             setProducts(data.products)
+            setLoading(false)
+        }
+        else{
+            <Loading/>
         }
     }, [data])
 
@@ -18,7 +28,9 @@ export function CategoryList() {
 
     return (
         <>
-            <ul className="categories">
+        {loading ? (<Loading/>):(
+            <>
+        <ul className="categories">
                 {categories.map((categoryItem, index) => (
                     <li key={index}>
                         <Link className="categories-link" to={`/categories/${categoryItem}`}>
@@ -31,20 +43,19 @@ export function CategoryList() {
                     </li>
                 ))}
             </ul>
+                    <h2>
+                    Tüm ürünler
+
+                    </h2>
             <ul>
-                ürünler
                 {products.map((productItem, productItemIndex) => {
                     return (
-                        <div className="home">
-                            <div className="home-product">
-                            <ProductCart productItem={productItem} productItemIndex={productItemIndex} />
-
-                            </div>
-                        </div>
+                       <HomeProduct/>
                     )
                 })}
             </ul>
-
+            </>
+)}       
         </>
     );
 }

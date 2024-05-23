@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useSite } from "../context/AppContext";
 import { Link } from "react-router-dom";
 
-export default function AutoComplate({ productItem}) {
+export default function AutoComplate({}) {
     const { productItems } = useSite();
     const [searchProduct, setSearchProduct] = useState([]);
     const [search, setSearch] = useState("");

@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import { useSite } from "../context/AppContext";
 
 export default function BasketProducts() {
-    const { productItems, setSelectProductItems, selectProductItems, setTotalPrice, totalPrice } = useSite()
+    const { setSelectProductItems, selectProductItems, setTotalPrice, totalPrice } = useSite()
 
     const DeletProduct = (selectProductItem) => {
         const deletedProduct = selectProductItems.filter((product) => product.id === selectProductItem.id);
@@ -56,7 +56,7 @@ export default function BasketProducts() {
                         <div className="basket-items">
                             <div className="basket-items-general">
                                 <div className="basket-items-image">
-                                    <img src={selectProductItem.images[0].replace('[', '').replace(']', '').replaceAll('"', '')} />
+                                <img src={selectProductItem.images[0].replace('[', '').replace(']', '').replaceAll('"', '')} />
                                 </div>
                                 <div className="basket-items-info">
                                     <div className="basket-items-text">

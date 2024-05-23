@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 import { useSite } from "../context/AppContext"
 
 export default function ProductDetail({ productItem }) {
@@ -31,7 +31,6 @@ export default function ProductDetail({ productItem }) {
     }
 
     return (
-        <>
             <div className="product-detail">
                 {thisProduct.images && <div className="product-detail-image">
                     <img src={thisProduct.images[0].replace('[', '').replace(']', '').replaceAll('"', '')} />
@@ -48,11 +47,11 @@ export default function ProductDetail({ productItem }) {
                             ></path>
                         </svg>
                         {window.getCookie('is_logged_in') == 'false' || window.getCookie('is_logged_in') == undefined ? (
-                            <a href="http://localhost:3000/giris">
+                            <Link to="/login">
                                 <span className="text">  Sepete Ekle !</span>
-                            </a>
+                            </Link>
                         ) : (
-                            <span className="text">  Sepete Ekle !</span>
+                            <span className="text">  Sepete sosis !</span>
                         )}
                         <span className="circle"></span>
                         <svg viewBox="0 0 24 24" className="arr-1" xmlns="http://www.w3.org/2000/svg">
@@ -65,6 +64,5 @@ export default function ProductDetail({ productItem }) {
                 <div>
                 </div>
             </div>
-        </>
     )
 }

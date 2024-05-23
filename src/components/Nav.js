@@ -56,7 +56,7 @@ export default function Nav() {
                     <NavLink to='/contact' className="nav-link">İletişim</NavLink>
                     {/* <NavLink to='/login' className="nav-link">Üye ol</NavLink> */}
                     {window.getCookie('is_logged_in') == 'false' ? (
-                        <NavLink to='/giris' className="nav-link">Giriş Yap</NavLink>
+                        <NavLink to='/login' className="nav-link">Giriş Yap</NavLink>
                     ) : <NavLink className="nav-link" to='/'><button onClick={logout} className="nav-link-quit">Çıkış Yap</button></NavLink>}
                 </div>
             </nav>

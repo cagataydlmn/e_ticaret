@@ -8,6 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 export default function ProductCart({ productItem, productItemIndex, findProduct = undefined, selectProductItem }) {
     const { setSelectProductItems, selectProductItems, setTotalPrice, likeItems, setLikeItems } = useSite()
     const [sizeOpen, setSizeOpen] = useState(false)
+    
     const showToastMessage = () => {
         toast.success("Ürün Sepete Eklendi!")
     };
@@ -60,7 +61,7 @@ export default function ProductCart({ productItem, productItemIndex, findProduct
 
                         {window.getCookie('is_logged_in') == 'false' ? (
                             <div className="products-add-basket-button">
-                                <Link  to="/giris" className="basket-shopping" >
+                                <Link  to="/login" className="basket-shopping" >
                                     <FontAwesomeIcon icon={faBasketShopping} />
                                 </Link>
                             </div>
@@ -70,7 +71,7 @@ export default function ProductCart({ productItem, productItemIndex, findProduct
 
                         {window.getCookie('is_logged_in') == 'false' ? (
                             <div className="products-add-like-button">
-                                <Link to="/giris">
+                                <Link to="/login">
                                     <FontAwesomeIcon icon={faHeart} />
                                 </Link>
                             </div>) : <div className="products-add-like-button">
@@ -79,7 +80,6 @@ export default function ProductCart({ productItem, productItemIndex, findProduct
                             </button>
                         </div>}
 
-                        {/* position relative  */}
                     </div>
                 </div>
                 <div className="products-description">

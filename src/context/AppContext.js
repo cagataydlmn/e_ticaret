@@ -20,7 +20,8 @@ const Provider = ({ children }) => {
         setLikeItems
     }
     useEffect(() => {
-        if (selectProductItems?.length > 0) {
+        if (selectProductItems?.length >= 0) {
+            debugger
             localStorage.setItem('selectProductItems', JSON.stringify(selectProductItems));
             localStorage.setItem('totalPrice', totalPrice);
         }
@@ -35,6 +36,7 @@ const Provider = ({ children }) => {
     const { data: productData } = useFetch('https://dummyjson.com/products')
 
     useEffect(() => {
+
         if (productData) {
             productData.products.forEach(element => {
                 element.quantity = 1

@@ -10,9 +10,9 @@ import LikePage from './pages/LikePage';
 import ProductDetail from './components/ProductDetail';
 import NotFound from './pages/NotFound';
 import Login from './pages/Login';
-import GirisYap from './pages/GirisYap';
 import { Categories } from './pages/Categories';
 import { CategoryDetail } from './pages/CategoryDetail';
+import SignUp from './pages/SignUp';
 
 function App() {
   
@@ -37,8 +37,8 @@ function App() {
           <Route path='/search/products/:productId' element={<ProductDetail/>}/>
           <Route path='/categories/products/:productId' element={<ProductDetail/>}/>
           <Route path='/categories/:brand/products/:productId' element={<ProductDetail/>}/>
+          <Route path='/signup' element={<SignUp/>}/>
           <Route path='/login' element={<Login/>}/>
-          <Route path='/giris' element={<GirisYap/>}/>
         </Route>
       </Routes>
     </AppProvider >

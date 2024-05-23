@@ -8,10 +8,11 @@ export default function Like() {
         const updatedLikeItems = likeItems.filter(item => item.id !== product);
         setLikeItems(updatedLikeItems);
     };
+
     if (window.getCookie('is_logged_in') == 'false') {
         return <div>
             Favorilere ürün ekleyebilmek için önce giriş yap
-            <NavLink to='/Giris'>
+            <NavLink to='/login'>
                 Giriş yapmak için tıkla
             </NavLink>
         </div>
@@ -29,7 +30,7 @@ export default function Like() {
                                 </div>
                                 <div className="basket-items-info">
                                     <div className="basket-items-text">
-                                        <div className="basket-items-title">
+                                        <div className="basket-items-text-title">
                                             {selectProductItem.title}
                                         </div>
                                         <div className="basket-items-description">
@@ -39,12 +40,13 @@ export default function Like() {
                                     <div className="price">
                                         Fiyatı:{selectProductItem.price}$
                                     </div>
-                                </div>
+                                </div>   
                             </div>
-                        </div>
-                        <div>
+                            <div>
                             <button onClick={() => DeletProduct(selectProductItem.id)}>Ürünü Favorilerden Kaldır</button>
                         </div>
+                        </div>
+                       
                     </li>
                 ))}
 

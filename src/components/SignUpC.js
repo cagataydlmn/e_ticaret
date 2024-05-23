@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Login = () => {
+const SignUpC = () => {
     const[users,setUsers]=useState([])
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
@@ -34,4 +34,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default SignUpC;
