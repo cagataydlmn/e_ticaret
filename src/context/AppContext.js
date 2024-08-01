@@ -21,7 +21,6 @@ const Provider = ({ children }) => {
     }
     useEffect(() => {
         if (selectProductItems?.length >= 0) {
-            debugger
             localStorage.setItem('selectProductItems', JSON.stringify(selectProductItems));
             localStorage.setItem('totalPrice', totalPrice);
         }

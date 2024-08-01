@@ -24,7 +24,7 @@ export default function AutoComplate({}) {
                 {searchProduct.map((item, itemindex) => (
                     <li key={itemindex}>
                         <div className="products">
-                            <div className="products-title">
+                            <div style={{fontWeight: '900',fontSize:'25px'}} className="products-title">
                                 {item.title}
                             </div>
                             <div className="products-image">
@@ -34,7 +34,7 @@ export default function AutoComplate({}) {
                             <div className="products-description">
                                 {item.description}
                             </div>
-                            <div className="products-price">
+                            <div style={{fontWeight: '900'}} className="products-price">
                                 {item.price}$
                             </div>
 
