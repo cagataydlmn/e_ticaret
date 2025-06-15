@@ -24,5 +24,5 @@ React ile geliştirilmiş modern bir e-ticaret platformu. Kullanıcı dostu aray
 1. Bu repoyu klonlayın:
 
 ```bash
-git clone https://github.com/kullaniciAdi/e_ticaret.git
+git clone https://github.com/cagataydlmn/e_ticaret.git
 cd e_ticaret
